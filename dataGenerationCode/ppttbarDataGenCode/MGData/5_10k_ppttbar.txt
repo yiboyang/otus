@@ -1,0 +1,3 @@
+launch ppttbar_2 -n run_05
+set run_card nevents 10000
+set run_card iseed 5

@@ -1,0 +1,15 @@
+This directory contains the code necessary to create hdf5 files of the latent data
+
+Directories that were used as tests to create this code or are not directly relevant are:
+__pycache__
+
+The code LHEtoHDF5.py converts LHE files to HDF5 format.
+
+runLHEtoHDF5_ppttbar.py runs LHEtoHDF5.py on a given file.
+
+ppttbar_runLHEtoHDF5.sh runs runLHEtoHDF5_ttbar.py on all relevant LHE files.
+
+HDF5Data/ is where the data is stored.
+
+To run the code ppttbar_runLHEtoHDF5.sh over the cluster:
+$ qsub -ckpt blcr serial.sh

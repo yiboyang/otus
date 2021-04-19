@@ -1,0 +1,3 @@
+launch ppzee
+set run_card nevents 10000
+set run_card iseed 11

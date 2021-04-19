@@ -1,0 +1,27 @@
+The code in this directory takes the Latent and Delphes Data and processes it into one collective HDF5 file.
+
+Edit FinalData_ppttbar.py to make sure that it includes all desired runs that exist in ../LatentData and ../DelphesData.
+
+Then execute the following command:
+$./FinalData_ppttbar.sh
+
+To run the code FinalData_ppttbar.sh over the cluster:
+$ qsub -ckpt blcr serial.sh
+
+To subsequently open the data, do the following in a .py or .ipynb file:
+
+fdata = h5py.File('FinalData_ppttbar.hdf5', 'r')
+
+#-- List all groups --#
+print("Keys: %s" % fdata.keys())
+
+#-- Get the keys --#
+zkey = list(fdata.keys())[0]
+xkey = list(fdata.keys())[1]
+
+#-- Get the data --#
+zgp = fdata.get(zkey)
+zData = zgp.get('zData')
+
+xgp = fdata.get(xkey)
+xData = xgp.get('xData')

@@ -1,0 +1,39 @@
+This directory contains the core utility functions called by the experiment and plotting notebooks.
+
+Below we list a summary of the files and the functions within them.
+
+----------------------------------------------
+LorentzVector.py:
+    Class of functions related to calculating properties of Lorentz 4-vectors.
+
+configs.py:
+    This file sets a series of global configuration settings relevant to training the models.
+
+func_utils.py
+    This file defines a myriad of utility functions used in both the experiment and plotting notebooks.
+
+models.py
+    This file defines the network architecture models used in the experiments.
+
+plot_utils.py
+    This file defines a myriad of plotting specific functions used in both the experiment and plotting notebooks.
+
+ppttbar_utils.py
+    This file defines functions used in the ppttbar experiment notebook.
+    
+ppzee_utils.py
+    This file defines functions used in the ppzee experiment notebook.
+
+split_hdf5data.py
+    Preprocesses the .hdf5 data to split it into trainin, validation, and testing fractions.
+
+top_masses.py
+    This file defines function to calculate the various invariant mass quantities for analyzing the results of the ppttbar 
+    experiment.
+    
+ppttbar_constraints.py
+    This file defines functions which determine whether an event passes the hard threshold cut.
+    
+----------------------------------------------
+
+All code is commented with details about the functions, their inputs, and their outputs.

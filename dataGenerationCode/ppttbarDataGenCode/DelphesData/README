@@ -1,0 +1,20 @@
+The code in this directory converts Delphes ROOT files into csv files.
+
+The code harvestDelphes.C restricts to delphes events that have
+  - one electron
+  - no muons
+  - no photons
+  - 4 jets
+  - one MET (present for all events)
+
+The code results in two files stored in csv_ppttbar/
+  - numberperevt.csv:
+    Structured as: event number, # e-, # mu, # photons, # jets, # MET (which will always be 1) for each event
+  - out_file.csv:
+    Structured as: event number, pid, PT (or MET in the case of MET), eta, phi for all reconstructed objects in the event
+
+The code harvestDelphes.sh runs harvestDelphes.C over the Delphes ROOT files. Run via:
+$./harvestDelphes.sh 
+
+To run the code harvestDelphes.sh over the cluster:
+$ qsub -ckpt blcr serial.sh

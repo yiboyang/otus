@@ -1,0 +1,42 @@
+# 
+This is the first step of generating data. 
+
+The code found here runs the simulation chain (MG+Pythia+Delphes) and produces the files to be processed by the next steps.
+
+STEP 0:
+If not already done generate the MG process.
+
+The process to generate is p p > t t~ with a specific final state. The command sequence is 
+$ ./bin/mg5_aMC
+MG5_aMC> generate p p > t t~, (t~ > b~ w-, w- > e- ve~),(t > b w+, w+ > u d~)
+MG5_aMC> output ppttbar_2
+
+Then move the directory to the directory where all the data will be generated:
+$ mv ppttbar_2 /pub/jnhoward/FastSim/ppttbarData/MGData2/
+
+STEP 1:
+(Start here if the ppttbar_2 directory exists)
+
+Here is the relevant code:
+  - init.sh 
+    Loads the path to Delphes library
+
+  - <run number>_<number of events generated>_ppttbar.txt   Ex. 3_600k_ppttbar.txt
+    Correct settings for simulation run
+
+  - process<run number>.sh Ex. process3.sh
+    Launches simulation with correct settings
+
+  - serial<run number>.sh  Ex. serial3.sh
+    Launches process and pipes output to log file, for running on cluster
+
+Create <run number>_<number of events generated>_ppttbar.txt, process<run number>.sh, and serial<run number>.sh for your run number and events generated. Change files as appropriate.
+
+STEP 2:
+Submit to cluster. Note that this step takes the longest.
+
+$ qsub -ckpt blcr serial<run number>.sh
+
+EXTRA:
+  - countNumJets.C
+    Counts number of 4-jet events and gives histogram of distribution of nJets over all events. See comments in code for how to run.

@@ -1,0 +1,7 @@
+
+Processing ./harvestDelphes.C("/pub/jnhoward/FastSim/ppttbarData/MGData2/ppttbar_2/Events/run_05/tag_1_delphes_events.root")...
+Number of electron lines in csv file = 1369
+Number of muon lines in csv file     = 0
+Number of photon lines in csv file   = 0
+Number of jet lines in csv file      = 5476
+Number of MET lines in csv file      = 1369
