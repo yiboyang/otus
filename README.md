@@ -15,8 +15,8 @@ This is the code used in the paper "Foundations of a Fast, Data-Driven, Machine-
 
 * ROOT v.6.08/00 [4]
 
-### Software Environment for the SWAE Experiments
-To reproduce the Python environment for the SWAE experiments, do the following:
+### Software Environment for the OTUS Experiments
+To reproduce the Python environment for the OTUS experiments, do the following:
 
  1. Create a barebones Python 3.6.9 installation, with the pip package manager set up. There are many ways to do this ([virtualenv](https://pypi.org/project/virtualenv/), or [venv](https://docs.python.org/3/library/venv.html) if you are running Python 3.6.9 already); here's an example with conda: `conda create --name py36-otus python=3.6.9; conda activate py36-otus`. conda will make sure to install pip within this new environment.
 
@@ -27,7 +27,7 @@ The main dependencies are Python 3.6.9, PyTorch 1.6, Numpy 1.17.4, and Jupyter 1
 The following libraries were used for experiments run on the GPU: CUDA 10.0, and CuDNN 7.6.
 
 ## Computing
-The following computing devices were used for the SWAE experiments:
+The following computing devices were used for the OTUS experiments:
 
 * Intel® Xeon® Gold 5218 CPU (the results should be reproducible across most Intel CPUs)
 
