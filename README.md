@@ -1,12 +1,12 @@
 ![plot](OTUSLogo.png)
 
 # Optimal Transport based Unfolding and Simulation (OTUS)
-This is the code used in the paper "Foundations of a Fast, Data-Driven, Machine-Learned Simulator": https://arxiv.org/abs/2101.08944
+This repo contains the code and data used in the paper "Foundations of a Fast, Data-Driven, Machine-Learned Simulator": https://arxiv.org/abs/2101.08944
 
 
 ## Software Setup
 
-### Information About Programs Used to Generate Data
+### Software Used for Data Generation
 * Madgraph5 v.2.6.3.2 [1]
 
 * Pythia v.8.240 [2]
@@ -18,13 +18,13 @@ This is the code used in the paper "Foundations of a Fast, Data-Driven, Machine-
 ### Software Environment for the OTUS Experiments
 To reproduce the Python environment for the OTUS experiments, do the following:
 
- 1. Create a barebones Python 3.6.9 installation, with the pip package manager set up. There are many ways to do this ([virtualenv](https://pypi.org/project/virtualenv/), or [venv](https://docs.python.org/3/library/venv.html) if you are running Python 3.6.9 already); here's an example with conda: `conda create --name py36-otus python=3.6.9; conda activate py36-otus`. conda will make sure to install pip within this new environment.
+ 1. Create a barebones Python 3.6.9 installation, including the (usually pre-installed) pip package manager which we'll use in step 2. There are many ways to do this (e.g., with [virtualenv](https://pypi.org/project/virtualenv/), or [venv](https://docs.python.org/3/library/venv.html)); we recommend the following setup with [conda](https://anaconda.org/anaconda/conda): `conda create --name py36-otus python=3.6.9; conda activate py36-otus`. conda will make sure to set up pip within this new environment.
 
-2. Within the above Python environment, run `pip install -r requirements.txt` to install the required packages. You may want to double check you have the right pip command (e.g., `which pip` on linux), so that the packages are installed to the right Python.
+2. Within the above Python environment, run `pip install -r requirements.txt` to install the required packages.
 
-The main dependencies are Python 3.6.9, PyTorch 1.6, Numpy 1.17.4, and Jupyter 1.0 (see `requirements-core.txt`). You may use other versions of these packages, but may not be able to reproduce the reported results.
+The main dependencies are Python 3.6.9, PyTorch 1.6, Numpy 1.17.4, and Jupyter 1.0 (see `requirements-core.txt`). You may use other versions of these packages, but may not be able to exactly reproduce the reported results.
 
-The following libraries were used for experiments run on the GPU: CUDA 10.0, and CuDNN 7.6.
+Additionally, the CUDA 10.0 and CuDNN 7.6 libraries were used for experiments run on the GPU.
 
 ## Computing
 The following computing devices were used for the OTUS experiments:
