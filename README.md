@@ -29,9 +29,9 @@ The following libraries were used for experiments run on the GPU: CUDA 10.0, and
 ## Computing
 The following computing devices were used for the SWAE experiments:
 
-* Intel(r) Xeon(r) Gold 5218 CPU (the results should be reproducible across most Intel CPUs)
+* Intel® Xeon® Gold 5218 CPU (the results should be reproducible across most Intel CPUs)
 
-* NVIDIA(r) TITAN RTX (tm) GPU
+* NVIDIA® TITAN RTX™ GPU
 
 ## Additional Helpful Links
 * SWAE paper: https://arxiv.org/abs/1804.01947, https://openreview.net/forum?id=H1xaJn05FQ
