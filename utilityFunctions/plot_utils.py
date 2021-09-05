@@ -315,7 +315,7 @@ def sciNotationString(x, p='%.2E'):
 
     return snew
 
-def ratioPlotSingle(Y1, Y2, varBins, xRange, yRange, ratioRange, axisName, statList12=[], legend=False, Wunit=r'[GeV$^2$]', save_figs=False, img_dir='Images'):
+def ratioPlotSingle(Y1, Y2, varBins, xRange, yRange, ratioRange, axisName, statList12=[], legend=False, Wunit=r'[GeV$^2$]', save_figs=False, img_dir='Images', ablLambda='',  ablBeta=''):
     # --------------------------------------------------------------------------------------
     # Plots a histogram of two samples (i.e. z and \tilde{z}) of a single variable (e.g. E)
     # It also plots the ratio to truth (i.e. \tilde{z}/z) in a lower subplot.
@@ -331,6 +331,12 @@ def ratioPlotSingle(Y1, Y2, varBins, xRange, yRange, ratioRange, axisName, statL
     #          Wunit          = Unit of the Wasserstein distance to use if plotting statistics
     #          save_figs      = Whether to save resulting plot as an image
     #          img_dir        = Directory to save image to
+    #          ablLambda      = Default ''. If '', do not add lambda value to save file name. 
+    #                           If not '', appends this to end of file name Ex. *_<ablLambda>.png.
+    #                           Recommend to set ablLambda = e.g. 'lamb=1'
+    #          ablBeta        = Default ''. If '', do not add beta value to save file name.
+    #                           If not '', appends this to end of file name Ex. *_<ablBeta>.png.
+    #                           Recommend to set ablBeta = e.g. 'beta=50'
     #
     # Outputs: Plot; saves image to file if indicated
     #
@@ -451,11 +457,16 @@ def ratioPlotSingle(Y1, Y2, varBins, xRange, yRange, ratioRange, axisName, statL
         axisName = axisName.replace("$", "")
 
         # Save image
-        plt.savefig(img_dir+'/ratio_zpred_z_'+axisName+'.png', dpi=500)
-
+        if ablLambda == '' and ablBeta == '':
+            plt.savefig(img_dir+'/ratio_zpred_z_'+axisName+'.png', dpi=500)
+        elif ablLambda != '' and ablBeta == '':
+            plt.savefig(img_dir+'/ratio_zpred_z_'+axisName+'_'+ablLambda+'.png', dpi=500)
+        elif ablLambda == '' and ablBeta != '':
+            plt.savefig(img_dir+'/ratio_zpred_z_'+axisName+'_'+ablBeta+'.png', dpi=500)
+            
     plt.show()
 
-def ratioPlotDouble(Y1, Y2, Y3, varBins, xRange, yRange, ratioRange, axisName, statList12=[], statList13=[], legend=False, Wunit=r'[GeV$^2$]', save_figs=False, img_dir='Images'):
+def ratioPlotDouble(Y1, Y2, Y3, varBins, xRange, yRange, ratioRange, axisName, statList12=[], statList13=[], legend=False, Wunit=r'[GeV$^2$]', save_figs=False, img_dir='Images', ablLambda='',  ablBeta=''):
     # --------------------------------------------------------------------------------------
     # Plots a histogram of three samples (i.e. z, \tilde{z}, and \tilde{z}') of a single variable (e.g. E)
     # It also plots the ratio to truth (i.e. \tilde{z}/z and \tilde{z}'/z) in a lower subplot.
@@ -473,6 +484,12 @@ def ratioPlotDouble(Y1, Y2, Y3, varBins, xRange, yRange, ratioRange, axisName, s
     #          Wunit          = Unit of the Wasserstein distance to use if plotting statistics
     #          save_figs      = Whether to save resulting plot as an image
     #          img_dir        = Directory to save image to
+    #          ablLambda      = Default ''. If '', do not add lambda value to save file name. 
+    #                           If not '', appends this to end of file name Ex. *_<ablLambda>.png.
+    #                           Recommend to set ablLambda = e.g. 'lamb=1'
+    #          ablBeta        = Default ''. If '', do not add beta value to save file name.
+    #                           If not '', appends this to end of file name Ex. *_<ablBeta>.png.
+    #                           Recommend to set ablBeta = e.g. 'beta=50'
     #
     # Outputs: Plot; saves image to file if indicated
     #
@@ -608,7 +625,12 @@ def ratioPlotDouble(Y1, Y2, Y3, varBins, xRange, yRange, ratioRange, axisName, s
         axisName = axisName.replace("$", "")
 
         # Save image
-        plt.savefig(img_dir+'/ratio_xpred_xpredtruth_x_'+axisName+'.png', dpi=500)
+        if ablLambda == '' and ablBeta == '':
+            plt.savefig(img_dir+'/ratio_xpred_xpredtruth_x_'+axisName+'.png', dpi=500)
+        elif ablLambda != '' and ablBeta == '':
+            plt.savefig(img_dir+'/ratio_xpred_xpredtruth_x_'+axisName+'_'+ablLambda+'.png', dpi=500)
+        elif ablLambda == '' and ablBeta != '':
+            plt.savefig(img_dir+'/ratio_xpred_xpredtruth_x_'+axisName+'_'+ablBeta+'.png', dpi=500)
 
     plt.show()
 
